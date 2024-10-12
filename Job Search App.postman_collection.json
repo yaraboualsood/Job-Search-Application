@@ -1,0 +1,820 @@
+{
+	"info": {
+		"_postman_id": "1c25191c-e216-4a77-bfea-2bd0903a7e0d",
+		"name": "Job Search App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23225128"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "signUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"ali\",\r\n    \"lastName\": \"tarek\",\r\n    \"email\" : \"yaraboualsood@gmail.com\",\r\n    \"password\": \"123456789\",\r\n    \"recoveryEmail\": \"yarasmaher@gmail.com\",\r\n    \"DOB\": \"2001-07-23\",\r\n    \"mobileNumber\" : \"0100011766\",\r\n    \"role\":\"User\" ,\r\n    \"status\" : \"offline\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"signup"
+							]
+						},
+						"description": "api for users to sign up"
+					},
+					"response": []
+				},
+				{
+					"name": "signIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"yaramaher87@gmail.com\",\r\n    \"password\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"signin"
+							]
+						},
+						"description": "api for users to sign in"
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "yaraeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTVjMmFlMmYxNTFlYzdmYjI0MjhhYyIsImVtYWlsIjoieWFyYXNtYWhlckBnbWFpbC5jb20iLCJpYXQiOjE3MjEwOTE4NDN9.nYzZokXTkkb72QP8RDK-SfQdAXH1IHrCi0YaLEqHAKY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"DOB\": \"2005-08-23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						},
+						"description": "api for users to update their info, send token of the account needed in headers for verification"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "yaraeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTVjMWNjMmYxNTFlYzdmYjI0Mjg5ZiIsImVtYWlsIjoieWFyYXNtYWhlckBnbWFpbC5jb20iLCJpYXQiOjE3MjEwOTA1MzN9.lejoZ6aRLmnm5_mxRnW44Fc0dPrc4XR3P-96QVpZEDk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								""
+							]
+						},
+						"description": "api for users to delete their account, send token of the account needed in headers for verification"
+					},
+					"response": []
+				},
+				{
+					"name": "getUserData",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "yaraeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTVjMmFlMmYxNTFlYzdmYjI0MjhhYyIsImVtYWlsIjoieWFyYXNtYWhlckBnbWFpbC5jb20iLCJpYXQiOjE3MjEwOTEwMjh9.mfwH0db5brvxEBavjlcg_EEIPG92sAwtwxSUnyVNlgM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/users/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"profile"
+							]
+						},
+						"description": "api to get user data send token of the account needed in headers for verification"
+					},
+					"response": []
+				},
+				{
+					"name": "getProfileDataForAnotherUser",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/profile/6695b726bb8f04c088721f60",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"profile",
+								"6695b726bb8f04c088721f60"
+							]
+						},
+						"description": "api to get profile data for another user"
+					},
+					"response": []
+				},
+				{
+					"name": "updatePassword",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "yaraeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTU4MGMxYWE4N2ZmYmEwYmRjZmM1ZiIsImVtYWlsIjoieWFyYW1haGVyODdAZ21haWwuY29tIiwiaWF0IjoxNzIxMDkyMjI2fQ.HTpqV3NWUgRthLzC621HdcFXsvZ3P79GNnAlz-Cy1ec",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\": \"65758797979778\",\r\n    \"newPassword\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/profile/password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"profile",
+								"password"
+							]
+						},
+						"description": "api to update password, send token of the account needed in headers for verification"
+					},
+					"response": []
+				},
+				{
+					"name": "forgetPassword",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "yaraeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTU4MGMxYWE4N2ZmYmEwYmRjZmM1ZiIsImVtYWlsIjoieWFyYW1haGVyODdAZ21haWwuY29tIiwiaWF0IjoxNzIxMDkyMjI2fQ.HTpqV3NWUgRthLzC621HdcFXsvZ3P79GNnAlz-Cy1ec",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"yaramaher87@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/profile/password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"profile",
+								"password"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						},
+						"description": "api to forget password, send token of the account needed in headers for verification, sends an otp on your email"
+					},
+					"response": []
+				},
+				{
+					"name": "resetPassword",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "yaraeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTU4MGMxYWE4N2ZmYmEwYmRjZmM1ZiIsImVtYWlsIjoieWFyYW1haGVyODdAZ21haWwuY29tIiwiaWF0IjoxNzIxMDkyMjI2fQ.HTpqV3NWUgRthLzC621HdcFXsvZ3P79GNnAlz-Cy1ec",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"yaramaher87@gmail.com\",\r\n    \"otp\" : \"518565\",\r\n    \"newPassword\": \"19397483723\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/profile/resetpassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"profile",
+								"resetpassword"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "api to reset password, send token of the account needed in headers for verification, type in the otp sent to your email to reset pass"
+					},
+					"response": []
+				},
+				{
+					"name": "getAccsRecvMail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/accounts/yarasmaher@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"accounts",
+								"yarasmaher@gmail.com"
+							]
+						},
+						"description": "api to get all accounts that have the same recovery email, type the recovery email in params to see all accounts"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "jobs",
+			"item": [
+				{
+					"name": "addJob",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "yaraeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWMwOTUxNGY1M2ZmZGM4YWMyMzBmMiIsImVtYWlsIjoieWFyYXNtYWhlckBnbWFpbC5jb20iLCJpYXQiOjE3MjE1MDIwNjN9.Jq_ItcOdAyADKIVJY3qdVnEswrumuX5q1lMFQ-muz3k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jobTitle\": \"Back End Position\",\r\n    \"jobLocation\": \"hybrid\",\r\n    \"workingTime\": \"part-time\",\r\n    \"seniorityLevel\": \"Junior\",\r\n    \"jobDescription\": \"Very Good\",\r\n    \"technicalSkills\" : \"HTML, CSS, JS, REACT\",\r\n    \"softSkills\": \"communication skills\",\r\n    \"companyId\" : \"669c06fe4eb87312cd085a0a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/jobs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs"
+							]
+						},
+						"description": "api to add job, send token of the account needed in headers for verification, user must be Company_HR"
+					},
+					"response": []
+				},
+				{
+					"name": "updateJob",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "yaraeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTU4MGMxYWE4N2ZmYmEwYmRjZmM1ZiIsImVtYWlsIjoieWFyYW1haGVyODdAZ21haWwuY29tIiwiaWF0IjoxNzIxMDkyMjI2fQ.HTpqV3NWUgRthLzC621HdcFXsvZ3P79GNnAlz-Cy1ec",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jobTitle\": \"Full Stack Position\",\r\n    \"jobLocation\": \"hybrid\",\r\n    \"workingTime\": \"part-time\",\r\n    \"seniorityLevel\": \"Junior\",\r\n    \"jobDescription\": \"Very Good\",\r\n    \"technicalSkills\": \"Nodejs React\",\r\n    \"softSkills\": \"communication skills\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/jobs/6698be72b78378d9bf30aebb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"6698be72b78378d9bf30aebb"
+							]
+						},
+						"description": "api to update job, send token of the account needed in headers for verification"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteJob",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "yaraeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTU4MGMxYWE4N2ZmYmEwYmRjZmM1ZiIsImVtYWlsIjoieWFyYW1haGVyODdAZ21haWwuY29tIiwiaWF0IjoxNzIxMDkyMjI2fQ.HTpqV3NWUgRthLzC621HdcFXsvZ3P79GNnAlz-Cy1ec",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/jobs/6698be72b78378d9bf30aebb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"6698be72b78378d9bf30aebb"
+							]
+						},
+						"description": "api to delete job, send token of the account needed in headers for verification"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllJobsWithCompanyInfo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "yaraeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTU4MGMxYWE4N2ZmYmEwYmRjZmM1ZiIsImVtYWlsIjoieWFyYW1haGVyODdAZ21haWwuY29tIiwiaWF0IjoxNzIxMDkyMjI2fQ.HTpqV3NWUgRthLzC621HdcFXsvZ3P79GNnAlz-Cy1ec",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/jobs/companies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"companies"
+							]
+						},
+						"description": "api to get all jobs with their company info"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllJobsForSpecificCompany",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "yaraeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTU4MGMxYWE4N2ZmYmEwYmRjZmM1ZiIsImVtYWlsIjoieWFyYW1haGVyODdAZ21haWwuY29tIiwiaWF0IjoxNzIxMDkyMjI2fQ.HTpqV3NWUgRthLzC621HdcFXsvZ3P79GNnAlz-Cy1ec",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/jobs/company?companyName=VOIS",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"company"
+							],
+							"query": [
+								{
+									"key": "companyName",
+									"value": "VOIS"
+								}
+							]
+						},
+						"description": "api to get all jobs for a specific company,must send company name in query"
+					},
+					"response": []
+				},
+				{
+					"name": "filterJobs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "yaraeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTU4MGMxYWE4N2ZmYmEwYmRjZmM1ZiIsImVtYWlsIjoieWFyYW1haGVyODdAZ21haWwuY29tIiwiaWF0IjoxNzIxMDkyMjI2fQ.HTpqV3NWUgRthLzC621HdcFXsvZ3P79GNnAlz-Cy1ec",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/jobs/filter?workingTime=part-time&jobLocation=hybrid",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "workingTime",
+									"value": "part-time"
+								},
+								{
+									"key": "jobLocation",
+									"value": "hybrid"
+								}
+							]
+						},
+						"description": "api to filter jobs using query"
+					},
+					"response": []
+				},
+				{
+					"name": "applyJob",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "yaraeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWM1OWU5ZDdhYTI1MzQ5MDY5Y2M2NCIsImVtYWlsIjoieWFyYWJvdWFsc29vZEBnbWFpbC5jb20iLCJpYXQiOjE3MjE1MjI4NjB9.jPCZJE4wthi5JdqvV5zO2iT7veB2teoCMKYnGq5i2eA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userTechSkills",
+									"value": "coding",
+									"type": "text"
+								},
+								{
+									"key": "userSoftSkills",
+									"value": "communication skills",
+									"type": "text"
+								},
+								{
+									"key": "userResume",
+									"type": "file",
+									"src": "/D:/Route/2. BACKEND/Assignments/Assignment 8/assignment-8.pdf"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/jobs/apply/669c0a2fd6ba9ac264ae09f5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"apply",
+								"669c0a2fd6ba9ac264ae09f5"
+							]
+						},
+						"description": "api to apply for job. send token of the account needed in headers for verification. account must have the role of User, send the rest of the info needed in form-data"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "company",
+			"item": [
+				{
+					"name": "addCompany",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "yaraeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTU4MGMxYWE4N2ZmYmEwYmRjZmM1ZiIsImVtYWlsIjoieWFyYW1haGVyODdAZ21haWwuY29tIiwiaWF0IjoxNzIxMDkyMjI2fQ.HTpqV3NWUgRthLzC621HdcFXsvZ3P79GNnAlz-Cy1ec",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyName\": \"VOIS\",\r\n    \"description\": \"....\",\r\n    \"industry\": \"Software\",\r\n    \"address\": \"6th Oct\",\r\n    \"numberOfEmployees\": \"300\",\r\n    \"companyEmail\": \"vois@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/companies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"companies"
+							]
+						},
+						"description": "api to add company, send token of the account needed in headers for verification. account must have the role of CompanyHR"
+					},
+					"response": []
+				},
+				{
+					"name": "updateCompany",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "yaraeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTU4MGMxYWE4N2ZmYmEwYmRjZmM1ZiIsImVtYWlsIjoieWFyYW1haGVyODdAZ21haWwuY29tIiwiaWF0IjoxNzIxMDkyMjI2fQ.HTpqV3NWUgRthLzC621HdcFXsvZ3P79GNnAlz-Cy1ec",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyName\": \"_VOIS\",\r\n    \"description\": \"....\",\r\n    \"industry\": \"Software\",\r\n    \"address\": \"6th Oct\",\r\n    \"numberOfEmployees\": \"300\",\r\n    \"companyEmail\": \"vois@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/companies/66998a195e7d66d1d8400402",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"companies",
+								"66998a195e7d66d1d8400402"
+							]
+						},
+						"description": "api to update company info, send token of the account needed in headers for verification. account must have the role of company HR"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCompany",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "yaraeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTU4MGMxYWE4N2ZmYmEwYmRjZmM1ZiIsImVtYWlsIjoieWFyYW1haGVyODdAZ21haWwuY29tIiwiaWF0IjoxNzIxMDkyMjI2fQ.HTpqV3NWUgRthLzC621HdcFXsvZ3P79GNnAlz-Cy1ec",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/companies/66998a195e7d66d1d8400402",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"companies",
+								"66998a195e7d66d1d8400402"
+							]
+						},
+						"description": "api to delete company send token of the account needed in headers for verification. account must have the role of company HR"
+					},
+					"response": []
+				},
+				{
+					"name": "getCompany",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "yaraeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTU4MGMxYWE4N2ZmYmEwYmRjZmM1ZiIsImVtYWlsIjoieWFyYW1haGVyODdAZ21haWwuY29tIiwiaWF0IjoxNzIxMDkyMjI2fQ.HTpqV3NWUgRthLzC621HdcFXsvZ3P79GNnAlz-Cy1ec",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/companies/companyInfo/669c06fe4eb87312cd085a0a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"companies",
+								"companyInfo",
+								"669c06fe4eb87312cd085a0a"
+							]
+						},
+						"description": "api to get company info, send its id in params"
+					},
+					"response": []
+				},
+				{
+					"name": "searchCompany",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "yaraeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTU4MGMxYWE4N2ZmYmEwYmRjZmM1ZiIsImVtYWlsIjoieWFyYW1haGVyODdAZ21haWwuY29tIiwiaWF0IjoxNzIxMDkyMjI2fQ.HTpqV3NWUgRthLzC621HdcFXsvZ3P79GNnAlz-Cy1ec",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/companies/search/vois",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"companies",
+								"search",
+								"vois"
+							]
+						},
+						"description": "api to search company, send its name in params"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllApplicationsSpecificJob",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "yaraeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTU4MGMxYWE4N2ZmYmEwYmRjZmM1ZiIsImVtYWlsIjoieWFyYW1haGVyODdAZ21haWwuY29tIiwiaWF0IjoxNzIxNTI0ODEzfQ.9HrwLGdNSB_EgYkGckgue4u_fgFEdopOTdJ7venhHnI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/companies/jobs/applications/669c0a2fd6ba9ac264ae09f5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"companies",
+								"jobs",
+								"applications",
+								"669c0a2fd6ba9ac264ae09f5"
+							]
+						},
+						"description": "api to get all applications for a speific job, send token in headers for verification. must be a valid account with the role of user that has applied for a job"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
